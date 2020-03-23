@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <title>Unofficial GitHub Actions for Rust</title>
+        <meta name="description" content="Unofficial GitHub Actions for Rust">
+        <meta name="keywords" content="GitHub,Actions,Rust,CI,CD,cargo,toolchain,rustup,stable,nightly,rustfmt,clippy,audit">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css" integrity="sha256-ct5KWWMn5eSjQCQkdJrskmSppUJDoXwUlBQXCZcISPk=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:creator" content="@svartalf"/>
+        <meta name="twitter:title" content="actions-rs" />
+        <meta name="twitter:description" content="Unofficial GitHub Actions for Rust" />
+        <meta name="twitter:image" content="https://actions-rs.github.io/banner.png" />
+
+        <meta property="og:title" content="actions-rs" />
+        <meta property="og:url" content="https://actions-rs.github.io/" />
+        <meta property="og:description" content="Unofficial GitHub Actions for Rust" />
+        <meta property="og:image" content="https://actions-rs.github.io/banner.png" />
+        <meta property="og:locale" content="en_US" />
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var button = document.getElementById('menu');
+                button.onclick = function(e) {
+                    e.preventDefault();
+                    var menu = document.getElementById('navigation-links');
+                    menu.classList.toggle('hidden');
+                };
+            });
+        </script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4710084-21"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-4710084-21');
+        </script>
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "SoftwareSourceCode",
+                "codeRepository": "https://github.com/actions-rs",
+                "codeSampleType": "full solution",
+                "programmingLanguage": "javascript",
+                "name": "actions-rs",
+                "description": "Unofficial GitHub Actions for Rust",
+                "author": {
+                    "@type": "Person",
+                    "name": "svartalf",
+                    "image": "https://svartalf.info/images/photo.jpg",
+                    "jobTitle": "Software engineer",
+                    "url": "https://svartalf.info/",
+                    "sameAs": [
+                        "https://github.com/svartalf",
+                        "https://twitter.com/svartalf"
+                    ]
+                }
+            }
+        </script>
+    </head>
+    <body class="subpixel-antialiased" style="background-color: rgb(236, 236, 236)">
+        <nav class="flex items-center justify-between flex-wrap p-6 lg:ml-32 lg:mr-32">
+            <div class="items-center flex-shrink-0 text-black mr-6 hidden md:flex lg:flex">
+                <img src="./logo.svg" alt="Logo" style="width: 32px; height: 32px;">
+            </div>
+            <div class="block lg:hidden">
+                <button id="menu" class="flex items-center px-3 py-2 border rounded text-black border-black hover:text-white hover:border-white">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+                </button>
+            </div>
+            <div id="navigation-links" class="w-full hidden md:block lg:block flex-grow md:flex lg:flex md:items-center lg:items-center md:w-auto lg:w-auto uppercase text-black">
+                <div class="text-sm md:flex-grow lg:flex-grow">
+                    <a href="https://github.com/actions-rs/meta#recipes" class="block mt-4  md:inline-block lg:inline-block lg:mt-0 mr-4 hover:text-green-900">
+                        Recipes
+                    </a>
+                </div>
+                <div>
+                    <a href="https://gitter.im/heim-rs/heim" class="block mt-4  md:inline-block lg:inline-block lg:mt-0 mr-4 hover:text-green-900">
+                        <i class="fab fa-gitter mr-1"></i>
+                        Chat
+                    </a>
+                    <a href="https://github.com/actions-rs" class="block mt-4 md:inline-block lg:inline-block lg:mt-0 mr-4 hover:text-green-900">
+                        <i class="fab fa-github mr-1"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <article class="mx-auto">
+                <section id="intro" class="h-screen text-center pt-12 pb-24">
+                    <div>
+                        <img src="./logo.svg" alt="Logo" style="width: 128px; height: 128px;" class="inline-block mr-5 ml-6">
+                        <h1 class="text-6xl font-bold">actions-rs</h1>
+                        <p class="text-gray-800 text-xl">
+                            Unofficial and widely adopted GitHub Actions toolkit for Rust programming language.<br>
+                            Making the Rust CI/CD process an easy thing!
+                    </div>
+                    <div>
+                        <a class="inline-block mt-4 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="#toolchain">
+                            Explore available Actions
+                        </a>
+                    </div>
+                </section>
+
+                <section id="toolchain" class="h-screen bg-black">
+                    <div class="flex flex-row justify-center pt-48 container mx-auto">
+                        <div class="px-16 text-white w-1/2">
+                            <h1 class="text-4xl">🛠️ toolchain</h1>
+
+                            <p>
+                                Install specific Rust toolchain. It supports additional targets, components and profiles
+                                and hides all the small papercuts.
+                            </p>
+
+                            <div class="mt-16">
+                                <a class="mr-4 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://github.com/actions-rs/toolchain">
+                                    Learn more
+                                </a>
+                                <a class=" w-64 hover:text-blue-900 text-blue-600 bg-black font-bold py-2 px-4 border border-blue-600 rounded" href="#cargo">
+                                    Next: cargo
+                                    <i class="pl-2 text-sm fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="w-1/2">
+                            <pre class="py-4 px-4 rounded bg-gray-300 shadow-xl">
+                                <code>
+- name: Install stable with rustfmt and clippy
+  uses: actions-rs/toolchain@v1
+  with:
+    profile: minimal
+    toolchain: stable
+    components: rustfmt, clippy
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="cargo" class="h-screen">
+                    <div class="flex flex-row flex-row-reverse justify-center pt-48 container mx-auto">
+                        <div class="px-16 text-black w-1/2">
+                            <h1 class="text-4xl">📦 cargo</h1>
+
+                            <p>
+                                Run specified <em>cargo</em> command.<br/>
+                                Can also install and call <a class="underline" href="https://github.com/rust-embedded/cross">cross</a> instead
+                                for easier cross-compilation.
+                            </p>
+
+                            <div class="mt-16">
+                                <a class="mr-4 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://github.com/actions-rs/toolchain">
+                                    Learn more
+                                </a>
+                                <a class="w-64 hover:text-blue-900 text-blue-600 font-bold py-2 px-4 border border-blue-600 rounded" href="#clippy-check">
+                                    Next: clippy-check
+                                    <i class="pl-2 text-sm fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="w-1/3">
+                            <pre class="py-4 px-8 rounded bg-gray-300 shadow-xl">
+                            <code>
+- name: Release build
+  uses: actions-rs/cargo@v1
+  with:
+    command: build
+    args: --release --all-features
+                            </code>
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="clippy-check" class="h-screen bg-black">
+                    <div class="flex flex-row justify-center pt-48 container mx-auto">
+                        <div class="px-16 text-white w-1/2">
+                            <h1 class="text-4xl">📎 clippy-check</h1>
+                            <p>
+                                Annotate commits and Pull Requests with <em>clippy</em> warnings.
+                            </p>
+
+                            <div class="mt-16">
+                                <a class="mr-4 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://github.com/actions-rs/clippy-check">
+                                    Learn more
+                                </a>
+                                <a class=" w-64 hover:text-blue-900 text-blue-600 bg-black font-bold py-2 px-4 border border-blue-600 rounded" href="#audit-check">
+                                    Next: audit-check
+                                    <i class="pl-2 text-sm fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="w-1/2">
+                            <pre class="py-4 px-4 rounded bg-gray-300 shadow-xl">
+                                <code>
+- name: Annotate commit with clippy warnings
+  uses: actions-rs/clippy-check@v1
+  with:
+    token: ${{ secrets.GITHUB_TOKEN }}
+    args: --all-features
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="audit-check" class="h-screen">
+                    <div class="flex flex-row flex-row justify-center pt-48 container mx-auto">
+                        <div class="px-16 text-black w-1/2">
+                            <h1 class="text-4xl">🛡️ audit-check</h1>
+                            <p>
+                                Perform an audit for dependencies
+                                with security vulnerabilities.
+                            </p>
+
+                            <div class="mt-16">
+                                <a class="mr-4 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://github.com/actions-rs/audit-check">
+                                    Learn more
+                                </a>
+                                <a class="w-64 hover:text-blue-900 text-blue-600 font-bold py-2 px-4 border border-blue-600 rounded" href="#code-coverage">
+                                    Next: code coverage
+                                    <i class="pl-2 text-sm fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="w-1/3">
+                            <pre class="py-4 px-8 rounded bg-gray-300 shadow-xl">
+                            <code>
+- name: Security audit
+  uses: actions-rs/audit-check@v1
+  with:
+    token: ${{ secrets.GITHUB_TOKEN }}
+                            </code>
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section id="code-coverage" class="h-screen bg-black">
+                    <div class="flex flex-row justify-center pt-48 container mx-auto">
+                        <div class="px-16 text-white w-1/2">
+                            <h1 class="text-4xl">📈 grcov</h1>
+                            <p>
+                                Collect and aggregate code coverage data with Mozilla <a href="https://github.com/mozilla/grcov" class="underline">grcov</a> tool.
+                            </p>
+
+                            <div class="mt-16">
+                                <a class="mr-4 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://github.com/actions-rs/grcov">
+                                    Learn more
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="px-16 text-white w-1/2">
+                            <h1 class="text-4xl">📈 tarpaulin</h1>
+                            <p>
+                                Collect and aggregate code coverage data with <a href="https://github.com/xd009642/tarpaulin" class="underline">tarpaulin</a> tool.
+                            </p>
+
+                            <div class="mt-16">
+                                <a class="mr-4 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://github.com/actions-rs/tarpaulin">
+                                    Learn more
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="text-center mt-48">
+                        <a class=" w-64 hover:text-blue-900 text-blue-600 bg-black font-bold py-2 px-4 border border-blue-600 rounded" href="#sponsoring">
+                            Continue exploring
+                            <i class="pl-2 text-sm fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                </section>
+
+                <section id="sponsoring" class="h-screen lg:ml-32 lg:mr-32 mt-10 pt-12 text-center">
+                    <h2 class="text-4xl">Sponsoring</h2>
+                    <p class="text-black text-lg text-gray-700">
+                        If you want to support author, say "Thank you!", or to speed up the project development,<br>
+                        feel free to use any of these buttons:
+                    </p>
+                    <p class="mt-24 flex flex-row justify-center">
+                        <a class="mr-4 w-64 bg-orange-600 hover:bg-orange-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://www.buymeacoffee.com/svartalf">
+                            Buy me a coffee
+                        </a>
+                        <a class="mr-4 w-64 bg-red-600 hover:bg-red-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://www.patreon.com/svartalf">
+                            Become a patron
+                        </a>
+                        <a class="mr-4 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://svartalf.info/donate">
+                            Other convenient options
+                        </a>
+                    </p>
+
+                </section>
+            </article>
+        </main>
+    </body>
+</html>
