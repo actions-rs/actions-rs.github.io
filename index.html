@@ -93,11 +93,11 @@
         </nav>
         <main>
             <article class="mx-auto">
-                <section id="intro" class="h-screen text-center pt-12 pb-24">
+                <section id="intro" class="lg:h-screen text-center pt-12 pb-24">
                     <div>
                         <img src="./logo.svg" alt="Logo" style="width: 128px; height: 128px;" class="inline-block mr-5 ml-6">
                         <h1 class="text-6xl font-bold">actions-rs</h1>
-                        <p class="text-gray-800 text-xl">
+                        <p class="text-gray-800 px-4 md:px-0 text-xl">
                             Unofficial and widely adopted GitHub Actions toolkit for Rust programming language.<br>
                             Making the Rust CI/CD process an easy thing!
                     </div>
@@ -108,21 +108,20 @@
                     </div>
                 </section>
 
-                <section id="toolchain" class="h-screen bg-black">
-                    <div class="flex flex-row justify-center pt-48 container mx-auto">
-                        <div class="px-16 text-white w-1/2">
+                <section id="toolchain" class="lg:h-screen bg-black py-2 sm:py-4 lg:py-0">
+                    <div class="lg:flex lg:flex-row justify-center pt-4 sm:pt-12 lg:pt-48 lg:container mx-auto">
+                        <div class="px-4 sm:px-16 text-white lg:w-1/3">
                             <h1 class="text-4xl">🛠️ toolchain</h1>
-
                             <p>
                                 Install specific Rust toolchain. It supports additional targets, components and profiles
                                 and hides all the small papercuts.
                             </p>
 
-                            <div class="mt-16">
-                                <a class="mr-4 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://github.com/actions-rs/toolchain">
+                            <div class="mt-8 lg:mt-16">
+                                <a class="md:mr-4 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://github.com/actions-rs/toolchain">
                                     Learn more
                                 </a>
-                                <a class=" w-64 hover:text-blue-900 text-blue-600 bg-black font-bold py-2 px-4 border border-blue-600 rounded" href="#cargo">
+                                <a class="w-64 hover:text-blue-900 text-blue-600 bg-black font-bold py-2 px-4 border border-blue-600 rounded" href="#cargo">
                                     Next: cargo
                                     <i class="pl-2 text-sm fas fa-arrow-right"></i>
                                 </a>
@@ -130,10 +129,10 @@
 
                         </div>
 
-                        <div class="w-1/2">
-                            <pre class="py-4 px-4 rounded bg-gray-300 shadow-xl">
-                                <code>
-- name: Install stable with rustfmt and clippy
+                        <div class="lg:w-1/2 my-8 sm:m-12 lg:m-0">
+                            <pre class="inline-block mx-4 px-12 py-4 rounded bg-gray-300 md:shadow-xl">
+                                <code class="text-xs md:text-sm lg:text-base">
+- name: Stable with rustfmt and clippy
   uses: actions-rs/toolchain@v1
   with:
     profile: minimal
@@ -145,9 +144,9 @@
                     </div>
                 </section>
 
-                <section id="cargo" class="h-screen">
-                    <div class="flex flex-row flex-row-reverse justify-center pt-48 container mx-auto">
-                        <div class="px-16 text-black w-1/2">
+                <section id="cargo" class="lg:h-screen py-2 sm:py-4 lg:py-0">
+                    <div class="lg:flex lg:flex-row lg:flex-row-reverse justify-center pt-4 sm:pt-12 lg:pt-48 lg:container mx-auto">
+                        <div class="px-4 sm:px-16 lg:w-1/3">
                             <h1 class="text-4xl">📦 cargo</h1>
 
                             <p>
@@ -156,8 +155,8 @@
                                 for easier cross-compilation.
                             </p>
 
-                            <div class="mt-16">
-                                <a class="mr-4 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://github.com/actions-rs/toolchain">
+                            <div class="mt-8 lg:mt-16">
+                                <a class="md:mr-4 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://github.com/actions-rs/cargo">
                                     Learn more
                                 </a>
                                 <a class="w-64 hover:text-blue-900 text-blue-600 font-bold py-2 px-4 border border-blue-600 rounded" href="#clippy-check">
@@ -167,30 +166,30 @@
                             </div>
 
                         </div>
-                        <div class="w-1/3">
-                            <pre class="py-4 px-8 rounded bg-gray-300 shadow-xl">
-                            <code>
+                        <div class="lg:w-1/3 my-8 sm:m-12 lg:m-0">
+                            <pre class="inline-block mx-4 px-12 py-4 rounded bg-gray-300 md:shadow-xl">
+                                <code class="text-xs md:text-sm lg:text-base">
 - name: Release build
   uses: actions-rs/cargo@v1
   with:
     command: build
     args: --release --all-features
-                            </code>
+                                </code>
                             </pre>
                         </div>
                     </div>
                 </section>
 
-                <section id="clippy-check" class="h-screen bg-black">
-                    <div class="flex flex-row justify-center pt-48 container mx-auto">
-                        <div class="px-16 text-white w-1/2">
+                <section id="clippy-check" class="lg:h-screen bg-black py-2 sm:py-4 lg:py-0">
+                    <div class="lg:flex lg:flex-row justify-center pt-4 sm:pt-12 lg:pt-48 lg:container mx-auto">
+                        <div class="px-4 sm:px-16 text-white lg:w-1/3">
                             <h1 class="text-4xl">📎 clippy-check</h1>
                             <p>
-                                Annotate commits and Pull Requests with <em>clippy</em> warnings.
+                                Annotate commits and Pull Requests with <a class="underline" href="https://github.com/rust-lang/rust-clippy">clippy</a> warnings.
                             </p>
 
-                            <div class="mt-16">
-                                <a class="mr-4 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://github.com/actions-rs/clippy-check">
+                            <div class="mt-8 lg:mt-16">
+                                <a class="md:mr-4 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://github.com/actions-rs/clippy-check">
                                     Learn more
                                 </a>
                                 <a class=" w-64 hover:text-blue-900 text-blue-600 bg-black font-bold py-2 px-4 border border-blue-600 rounded" href="#audit-check">
@@ -201,9 +200,9 @@
 
                         </div>
 
-                        <div class="w-1/2">
-                            <pre class="py-4 px-4 rounded bg-gray-300 shadow-xl">
-                                <code>
+                        <div class="lg:w-1/3 my-8 sm:m-12 lg:m-0">
+                            <pre class="inline-block mx-4 px-12 py-4 md:rounded bg-gray-300 md:shadow-xl">
+                                <code class="text-xs md:text-sm lg:text-base">
 - name: Annotate commit with clippy warnings
   uses: actions-rs/clippy-check@v1
   with:
@@ -215,17 +214,17 @@
                     </div>
                 </section>
 
-                <section id="audit-check" class="h-screen">
-                    <div class="flex flex-row flex-row justify-center pt-48 container mx-auto">
-                        <div class="px-16 text-black w-1/2">
+                <section id="audit-check" class="lg:h-screen py-2 sm:py-4 lg:py-0">
+                    <div class="lg:flex lg:flex-row justify-center pt-4 sm:pt-12 lg:pt-48 lg:container mx-auto">
+                        <div class="px-4 sm:px-16 lg:w-1/3">
                             <h1 class="text-4xl">🛡️ audit-check</h1>
                             <p>
                                 Perform an audit for dependencies
                                 with security vulnerabilities.
                             </p>
 
-                            <div class="mt-16">
-                                <a class="mr-4 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://github.com/actions-rs/audit-check">
+                            <div class="mt-8 lg:mt-16">
+                                <a class="md:mr-4 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://github.com/actions-rs/audit-check">
                                     Learn more
                                 </a>
                                 <a class="w-64 hover:text-blue-900 text-blue-600 font-bold py-2 px-4 border border-blue-600 rounded" href="#code-coverage">
@@ -235,9 +234,9 @@
                             </div>
 
                         </div>
-                        <div class="w-1/3">
-                            <pre class="py-4 px-8 rounded bg-gray-300 shadow-xl">
-                            <code>
+                        <div class="lg:w-1/3 my-8 sm:m-12 lg:m-0">
+                            <pre class="inline-block mx-4 px-12 py-4 md:rounded bg-gray-300 md:shadow-xl">
+                                <code class="text-xs md:text-sm lg:text-base">
 - name: Security audit
   uses: actions-rs/audit-check@v1
   with:
@@ -249,15 +248,15 @@
                 </section>
 
 
-                <section id="code-coverage" class="h-screen bg-black">
-                    <div class="flex flex-row justify-center pt-48 container mx-auto">
-                        <div class="px-16 text-white w-1/2">
+                <section id="code-coverage" class="lg:h-screen py-2 sm:py-4 lg:py-0 bg-black">
+                    <div class="lg:flex lg:flex-row justify-center pt-4 sm:pt-12 lg:pt-48 lg:container mx-auto">
+                        <div class="px-4 py-8 sm:px-16 lg:w-1/3 text-white">
                             <h1 class="text-4xl">📈 grcov</h1>
                             <p>
                                 Collect and aggregate code coverage data with Mozilla <a href="https://github.com/mozilla/grcov" class="underline">grcov</a> tool.
                             </p>
 
-                            <div class="mt-16">
+                            <div class="mt-8 lg:mt-16">
                                 <a class="mr-4 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://github.com/actions-rs/grcov">
                                     Learn more
                                 </a>
@@ -265,13 +264,13 @@
 
                         </div>
 
-                        <div class="px-16 text-white w-1/2">
+                        <div class="px-4 py-8 sm:px-16 lg:w-1/3 sm:mt-0 md:mt-12 lg:mt-0 text-white">
                             <h1 class="text-4xl">📈 tarpaulin</h1>
                             <p>
                                 Collect and aggregate code coverage data with <a href="https://github.com/xd009642/tarpaulin" class="underline">tarpaulin</a> tool.
                             </p>
 
-                            <div class="mt-16">
+                            <div class="mt-8 lg:mt-16">
                                 <a class="mr-4 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://github.com/actions-rs/tarpaulin">
                                     Learn more
                                 </a>
@@ -279,8 +278,7 @@
                         </div>
                     </div>
 
-
-                    <div class="text-center mt-48">
+                    <div class="text-center hidden lg:block lg:mt-48">
                         <a class=" w-64 hover:text-blue-900 text-blue-600 bg-black font-bold py-2 px-4 border border-blue-600 rounded" href="#sponsoring">
                             Continue exploring
                             <i class="pl-2 text-sm fas fa-arrow-right"></i>
@@ -289,21 +287,22 @@
 
                 </section>
 
-                <section id="sponsoring" class="h-screen lg:ml-32 lg:mr-32 mt-10 pt-12 text-center">
+                <section id="sponsoring" class="lg:h-screen lg:container lg:mx-auto my-10 pt-12 text-center">
                     <h2 class="text-4xl">Sponsoring</h2>
                     <p class="text-black text-lg text-gray-700">
                         If you want to support author, say "Thank you!", or to speed up the project development,<br>
                         feel free to use any of these buttons:
                     </p>
-                    <p class="mt-24 flex flex-row justify-center">
-                        <a class="mr-4 w-64 bg-orange-600 hover:bg-orange-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://www.buymeacoffee.com/svartalf">
+                    <p class="mt-8 md:mt-24 flex flex-col lg:flex-row lg:justify-center items-center">
+                        <a class="m-4 md:mb-0 w-64 bg-orange-600 hover:bg-orange-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://www.buymeacoffee.com/svartalf">
                             Buy me a coffee
                         </a>
-                        <a class="mr-4 w-64 bg-red-600 hover:bg-red-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://www.patreon.com/svartalf">
+                        <a class="m-4 md:mb-0 w-64 bg-red-600 hover:bg-red-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://www.patreon.com/svartalf">
                             Become a patron
                         </a>
-                        <a class="mr-4 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://svartalf.info/donate">
+                        <a class="m-4 md:mb-0 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://svartalf.info/donate">
                             Other convenient options
+                            <i class="pl-2 text-sm fas fa-arrow-right"></i>
                         </a>
                     </p>
 
