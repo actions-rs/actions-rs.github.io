@@ -110,8 +110,7 @@
                         </a>
                     </div>
                 </section>
-
-                <section id="toolchain" class="lg:h-screen bg-black py-2 sm:py-4 lg:py-0">
+                <section id="toolchain" class="lg:h-screen bg-black  py-2 sm:py-4 lg:py-0">
                     <div class="lg:flex lg:flex-row justify-center pt-4 sm:pt-12 lg:pt-48 lg:container mx-auto">
                         <div class="px-4 sm:px-16 text-white lg:w-1/3">
                             <h1 class="text-4xl">🛠️ toolchain</h1>
@@ -132,7 +131,7 @@
 
                         </div>
 
-                        <div class="lg:w-1/2 my-8 sm:m-12 lg:m-0">
+                        <div class="lg:w-1/3 my-8 sm:m-12 lg:m-0">
                             <pre class="inline-block mx-4 px-2 md:px-12 py-2 rounded bg-gray-300 md:shadow-xl">
                                 <code class="text-xs md:text-sm lg:text-base">
 - name: Stable with rustfmt and clippy
@@ -148,7 +147,7 @@
                 </section>
 
                 <section id="cargo" class="lg:h-screen py-2 sm:py-4 lg:py-0">
-                    <div class="lg:flex lg:flex-row lg:flex-row-reverse justify-center pt-4 sm:pt-12 lg:pt-48 lg:container mx-auto">
+                    <div class="lg:flex lg:flex-row justify-center pt-4 sm:pt-12 lg:pt-48 lg:container mx-auto">
                         <div class="px-4 sm:px-16 lg:w-1/3">
                             <h1 class="text-4xl">📦 cargo</h1>
 
@@ -162,8 +161,8 @@
                                 <a class="mr-2 md:mr-4 w-64 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://github.com/actions-rs/cargo">
                                     Learn more
                                 </a>
-                                <a class="w-64 hover:text-blue-900 text-blue-600 font-bold py-2 px-4 border border-blue-600 rounded" href="#clippy-check">
-                                    Next: clippy-check
+                                <a class="w-64 hover:text-blue-900 text-blue-600 font-bold py-2 px-4 border border-blue-600 rounded" href="#install">
+                                    Next: install
                                     <i class="pl-2 text-sm fas fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -178,6 +177,41 @@
     command: build
     args: --release --all-features
                                 </code>
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="install" class="lg:h-screen py-2 sm:py-4 lg:py-0">
+                    <div class="lg:flex lg:flex-row justify-center pt-4 sm:pt-12 lg:pt-48 lg:container mx-auto">
+                        <div class="px-4 sm:px-16 lg:w-1/3">
+                            <h1 class="text-4xl">⏩️ install</h1>
+                            <p>
+                                Faster binary crates installation.
+                                One second in the best case scenario.
+                            </p>
+
+                            <div class="mt-8 lg:mt-16">
+                                <a class="mr-0 md:mr-4 bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 border border-transparent rounded" href="https://github.com/actions-rs/install">
+                                    Learn more
+                                </a>
+                                <a class="w-64 hover:text-blue-900 text-blue-600 font-bold py-2 px-4 border border-blue-600 rounded" href="#clippy-check">
+                                    Next: clippy-check
+                                    <i class="pl-2 text-sm fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="lg:w-1/3 my-8 sm:m-12 lg:m-0">
+                            <pre class="inline-block mx-4 px-2 md:px-12 py-2 rounded bg-gray-300 md:shadow-xl">
+                                <code class="text-xs md:text-sm lg:text-base">
+- name: Install cargo-audit binary crate
+  uses: actions-rs/install@v0.1
+  with:
+    crate: cargo-audit
+    version: latest
+    use-tool-cache: true
+                            </code>
                             </pre>
                         </div>
                     </div>
@@ -218,7 +252,7 @@
                 </section>
 
                 <section id="audit-check" class="lg:h-screen py-2 sm:py-4 lg:py-0">
-                    <div class="lg:flex lg:flex-row lg:flex-row-reverse justify-center pt-4 sm:pt-12 lg:pt-48 lg:container mx-auto">
+                    <div class="lg:flex lg:flex-row justify-center pt-4 sm:pt-12 lg:pt-48 lg:container mx-auto">
                         <div class="px-4 sm:px-16 lg:w-1/3">
                             <h1 class="text-4xl">🛡️ audit-check</h1>
                             <p>
@@ -249,7 +283,6 @@
                         </div>
                     </div>
                 </section>
-
 
                 <section id="code-coverage" class="lg:h-screen py-2 sm:py-4 lg:py-0 bg-black">
                     <div class="lg:flex lg:flex-row justify-center pt-4 sm:pt-12 lg:pt-48 lg:container mx-auto">
